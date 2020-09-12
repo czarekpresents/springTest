@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+    <h1 th:inline="text">Logged as > [[${#httpServletRequest.remoteUser}]] < </h1>
+
+    <form th:action="@{/greetings/hello}" method="get">
+        <input type="hidden" name="name" th:value="${#httpServletRequest.remoteUser}">
+        <input type="submit" value="Say Hello!">
+    </form>
+
+    <form th:action="@{/greetings/bye}" method="get">
+        <input type="hidden" name="name" th:value="${#httpServletRequest.remoteUser}">
+        <input type="submit" value="Say Goodbye!">
+    </form>
+
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+</body>
+</html>
