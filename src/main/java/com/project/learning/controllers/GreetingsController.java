@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/greetings")
 public class GreetingsController {
 
-    @PostMapping("/hello/{name}")
+    @PostMapping("hello/{name}")
     public String hello(@PathVariable @NotNull String name) {
         return String.format("Hello %s!", name.toUpperCase());
     }
 
-    @PostMapping("/bye/{name}")
+    @PostMapping("bye/{name}")
     public String bye(@PathVariable @NotNull String name) {
         return String.format("Goodbye %s!", name.toUpperCase());
     }
