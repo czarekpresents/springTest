@@ -6,13 +6,11 @@
 <body>
     <h1 th:inline="text">Logged as > [[${#httpServletRequest.remoteUser}]] < </h1>
 
-    <form th:action="@{/greetings/hello}" method="get">
-        <input type="hidden" name="name" th:value="${#httpServletRequest.remoteUser}">
+    <form th:action="@{'/greetings/hello/' + ${#httpServletRequest.remoteUser}}" method="get">
         <input type="submit" value="Say Hello!">
     </form>
 
-    <form th:action="@{/greetings/bye}" method="get">
-        <input type="hidden" name="name" th:value="${#httpServletRequest.remoteUser}">
+    <form th:action="@{'/greetings/bye/' + ${#httpServletRequest.remoteUser}}" method="get">
         <input type="submit" value="Say Goodbye!">
     </form>
 
